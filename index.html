@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>puzzal game</title>
+	<style type="text/css">
+		body
+		{
+			background-color: #333;
+		}
+		.grid
+		{
+			display: inline-grid;
+			grid-template-columns: repeat(3, 1fr);
+			margin: 5px;
+			padding: 5px;
+		}
+		input{
+			height: 100px;
+			width: 100px;
+			font-size: 50px;
+			color: #333;
+			border: 2px solid #333;
+		}
+		.btn{
+			background-color:#e76f51  ;
+
+		}
+		#reset
+		{
+			width: 150px;
+			height: 50px;
+			color: #000;
+			background-color: #fff;
+			border-radius: 20px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			padding: 10px;
+			margin-top: 20px;
+			font-size: 25px;
+
+
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function b9()
+		{
+			var val=document.getElementById('b9').value;
+			var blank=document.getElementById('b8').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b8').value=val;
+				document.getElementById('b9').value='';
+			}
+			var val=document.getElementById('b9').value;
+			var blank=document.getElementById('b6').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b6').value=val;
+				document.getElementById('b9').value='';
+			}
+			win();
+			
+		}
+		function b8()
+		{
+			
+			var val=document.getElementById('b8').value;
+			var blank=document.getElementById('b9').value;
+
+			if(blank=='')
+			{
+				// document.getElementById('b4').value=val;
+				document.getElementById('b9').value=val;
+				document.getElementById('b8').value='';
+			}
+			var val=document.getElementById('b8').value;
+			var blank=document.getElementById('b7').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b7').value=val;
+				document.getElementById('b8').value='';
+			}
+			var val=document.getElementById('b8').value;
+			var blank=document.getElementById('b5').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b5').value=val;
+				document.getElementById('b8').value='';
+			}
+			win();
+		}
+
+		function b7()
+		{
+			var val=document.getElementById('b7').value;
+			var blank=document.getElementById('b8').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b8').value=val;
+				document.getElementById('b7').value='';
+			}
+			var val=document.getElementById('b7').value;
+			var blank=document.getElementById('b4').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b4').value=val;
+				document.getElementById('b7').value='';
+			}	
+			win();
+		}
+		function b6()
+		{
+			var val=document.getElementById('b6').value;
+			var blank=document.getElementById('b9').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b9').value=val;
+				document.getElementById('b6').value='';
+			}
+			var val=document.getElementById('b6').value;
+			var blank=document.getElementById('b5').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b5').value=val;
+				document.getElementById('b6').value='';
+			}
+			var val=document.getElementById('b6').value;
+			var blank=document.getElementById('b3').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b3').value=val;
+				document.getElementById('b6').value='';
+			}
+			win();
+			
+		}
+		function b5()
+		{
+			var val=document.getElementById('b5').value;
+			var blank=document.getElementById('b6').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b6').value=val;
+				document.getElementById('b5').value='';
+			}
+			var val=document.getElementById('b5').value;
+			var blank=document.getElementById('b4').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b4').value=val;
+				document.getElementById('b5').value='';
+			}
+			var val=document.getElementById('b5').value;
+			var blank=document.getElementById('b8').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b8').value=val;
+				document.getElementById('b5').value='';
+			}
+			var val=document.getElementById('b5').value;
+			var blank=document.getElementById('b2').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b2').value=val;
+				document.getElementById('b5').value='';
+			}
+			win();
+		}
+		function b4()
+		{
+			var val=document.getElementById('b4').value;
+			var blank=document.getElementById('b5').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b5').value=val;
+				document.getElementById('b4').value='';
+			}
+			var val=document.getElementById('b4').value;
+			var blank=document.getElementById('b9').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b9').value=val;
+				document.getElementById('b4').value='';
+			}
+			var val=document.getElementById('b4').value;
+			var blank=document.getElementById('b7').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b7').value=val;
+				document.getElementById('b4').value='';
+			}
+			var val=document.getElementById('b4').value;
+			var blank=document.getElementById('b1').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b1').value=val;
+				document.getElementById('b4').value='';
+			}
+			win();
+		}
+		function b3()
+		{
+			var val=document.getElementById('b3').value;
+			var blank=document.getElementById('b6').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b6').value=val;
+				document.getElementById('b3').value='';
+			}
+			var val=document.getElementById('b3').value;
+			var blank=document.getElementById('b2').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b2').value=val;
+				document.getElementById('b3').value='';
+			}
+			win();
+		}
+		function b2()
+		{
+			var val=document.getElementById('b2').value;
+			var blank=document.getElementById('b3').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b3').value=val;
+				document.getElementById('b2').value='';
+			}
+			var val=document.getElementById('b2').value;
+			var blank=document.getElementById('b1').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b1').value=val;
+				document.getElementById('b2').value='';
+			}
+			var val=document.getElementById('b2').value;
+			var blank=document.getElementById('b5').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b5').value=val;
+				document.getElementById('b2').value='';
+			}
+			win();
+		}
+		function b1()
+		{
+			var val=document.getElementById('b1').value;
+			var blank=document.getElementById('b2').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b2').value=val;
+				document.getElementById('b1').value='';
+			}
+			var val=document.getElementById('b1').value;
+			var blank=document.getElementById('b4').value;
+
+			if(blank=='')
+			{
+				document.getElementById('b4').value=val;
+				document.getElementById('b1').value='';
+			}
+			win();
+		}
+
+		function reset()
+		{
+			document.getElementById('reset').value;
+			location.reload();
+
+			
+	}
+
+				var arr=[];
+
+
+		window.onload = function()
+			{
+				
+				for(var i=1;i<10;i++)
+				{
+					var x=Math.floor(Math.random(1,9)*9+1)-1;
+					if(arr.includes(x))
+					{
+						i--;
+						continue;
+					}
+					else
+					{
+						arr[i-1]=x;
+					}
+				}
+				// document.write(arr);
+				//document.getElementById('b1').value=arr;
+
+
+
+				for (var i = 0; i < arr.length; i++) 
+				{
+
+						if(arr[i]==0)
+						{
+							arr[i] = '';
+						}
+						document.getElementsByClassName('btn')[i].value = arr[i];	
+				}
+
+				
+
+			}	
+
+		function win()
+		{
+			var one=document.getElementById('b1').value;
+			var two=document.getElementById('b2').value;
+			var three=document.getElementById('b3').value;
+			var four=document.getElementById('b4').value;
+			var five=document.getElementById('b5').value;
+			var six=document.getElementById('b6').value;
+			var seven=document.getElementById('b7').value;
+			var eight=document.getElementById('b8').value;
+			var nine=document.getElementById('b9').value;
+
+			if(one==1 && two==2 && three==3 && four==4 && five==5 && six==6 && seven==7 && eight==8 && nine=='')
+			{
+				alert("you are win");
+			}
+
+		}
+		function setval()
+		{
+			alert();
+		}
+
+
+	</script>
+</head>
+<body>
+
+
+
+	
+	<center>
+		<div class="grid">
+			<!-- <input type="button" name="" value=""  id="t" class="btn" onclick="b1();" > -->
+			<input type="button" name=""  id="b1" class="btn" onclick="b1();">
+			<input type="button" name=""  id="b2" class="btn" onclick="b2();" >
+			<input type="button" name=""  id="b3" class="btn" onclick="b3();" >
+			<input type="button" name=""  id="b4" class="btn" onclick="b4();" >
+			<input type="button" name=""  id="b5" class="btn" onclick="b5();" >
+			<input type="button" name=""  id="b6" class="btn" onclick="b6();" >
+			<input type="button" name=""  id="b7" class="btn" onclick="b7();" >
+			<input type="button" name=""  id="b8" class="btn" onclick="b8();" >
+			<input type="button" name=""  id="b9" class="btn" onclick="b9();">
+		</div>
+		
+	</center>
+		<input type="reset" name=""  id="reset" onclick="reset();">
+</body>
+</html>
